@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B1220"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🤖 BOT TRADING PRO"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="v4.0 Android Native • Binance Spot"
+            android:textColor="#94A3B8"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:layout_marginBottom="14dp" />
+
+        <!-- PILIHAN -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#1E293B"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pair / Timeframe / Strategi"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="15sp" />
+                <Spinner android:id="@+id/spinnerPair"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:layout_marginTop="8dp" android:background="#0F172A"
+                    android:popupBackground="#1E293B" />
+                <Spinner android:id="@+id/spinnerTimeframe"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:layout_marginTop="8dp" android:background="#0F172A"
+                    android:popupBackground="#1E293B" />
+                <Spinner android:id="@+id/spinnerStrategy"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:layout_marginTop="8dp" android:background="#0F172A"
+                    android:popupBackground="#1E293B" />
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchLive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="💰 Mode LIVE (Uang Asli)"
+                    android:textColor="#FACC15" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- HARGA & SINYAL -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#1E293B"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+                <TextView android:id="@+id/tvPrice"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="$0.00" android:textColor="#FFFFFF"
+                    android:textSize="28sp" android:textStyle="bold" android:gravity="center" />
+                <TextView android:id="@+id/tvSignal"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="⚪ MENUNGGU DATA" android:textColor="#94A3B8"
+                    android:textSize="19sp" android:textStyle="bold" android:gravity="center"
+                    android:layout_marginTop="4dp" />
+                <TextView android:id="@+id/tvScore"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Skor: 0" android:textColor="#94A3B8"
+                    android:textSize="13sp" android:gravity="center" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- GRAFIK -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#1E293B"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📊 Grafik Candlestick (EMA9 kuning • EMA21 ungu)"
+                    android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="13sp" />
+                <com.bot.tradingpro.ChartView
+                    android:id="@+id/chartView"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#0F172A" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- INDIKATOR -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#1E293B"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📈 Indikator" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="15sp" />
+                <TextView android:id="@+id/tvRsi" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="RSI: -" android:textColor="#E2E8F0" android:textSize="14sp" android:layout_marginTop="8dp" />
+                <TextView android:id="@+id/tvEma" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="EMA: -" android:textColor="#E2E8F0" android:textSize="14sp" />
+                <TextView android:id="@+id/tvMacd" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="MACD: -" android:textColor="#E2E8F0" android:textSize="14sp" />
+                <TextView android:id="@+id/tvBb" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Bollinger: -" android:textColor="#E2E8F0" android:textSize="14sp" />
+                <TextView android:id="@+id/tvReasons" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Alasan: -" android:textColor="#94A3B8" android:textSize="12sp" android:layout_marginTop="6dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- WALLET -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#1E293B"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="💼 Wallet Paper Trading" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="15sp" />
+                <TextView android:id="@+id/tvUsdt" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Saldo USDT: -" android:textColor="#E2E8F0" android:textSize="14sp" android:layout_marginTop="8dp" />
+                <TextView android:id="@+id/tvCoin" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Koin: -" android:textColor="#E2E8F0" android:textSize="14sp" />
+                <TextView android:id="@+id/tvEquity" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Total Equity: -" android:textColor="#E2E8F0" android:textSize="14sp" />
+                <TextView android:id="@+id/tvProfit" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Profit: -" android:textColor="#E2E8F0" android:textSize="14sp" />
+                <TextView android:id="@+id/tvPosition" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Posisi: Tidak ada" android:textColor="#E2E8F0" android:textSize="14sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- TOMBOL -->
+        <Button android:id="@+id/btnStart"
+            android:layout_width="match_parent" android:layout_height="58dp"
+            android:backgroundTint="#16A34A"
+            android:text="🚀 START BOT" android:textColor="#FFFFFF"
+            android:textStyle="bold" android:textSize="16sp" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginTop="10dp">
+            <Button android:id="@+id/btnBuy"
+                android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+                android:layout_marginEnd="6dp" android:backgroundTint="#22C55E"
+                android:text="🟢 BUY MANUAL" android:textColor="#FFFFFF" android:textStyle="bold" />
+            <Button android:id="@+id/btnSell"
+                android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+                android:backgroundTint="#DC2626"
+                android:text="🔴 SELL MANUAL" android:textColor="#FFFFFF" android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginTop="10dp">
+            <Button android:id="@+id/btnCek"
+                android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+                android:layout_marginEnd="6dp" android:backgroundTint="#334155"
+                android:text="📈 CEK SEKARANG" android:textColor="#FFFFFF" android:textStyle="bold" />
+            <Button android:id="@+id/btnScanner"
+                android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+                android:backgroundTint="#334155"
+                android:text="🔍 SCANNER" android:textColor="#FFFFFF" android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginTop="10dp" android:layout_marginBottom="12dp">
+            <Button android:id="@+id/btnBacktest"
+                android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+                android:layout_marginEnd="6dp" android:backgroundTint="#334155"
+                android:text="📊 BACKTEST" android:textColor="#FFFFFF" android:textStyle="bold" />
+            <Button android:id="@+id/btnSettings"
+                android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1"
+                android:backgroundTint="#334155"
+                android:text="⚙️ SETTING" android:textColor="#FFFFFF" android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- LOG -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#1E293B"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📜 Log Aktivitas" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="15sp" />
+                <TextView android:id="@+id/tvLog"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:minHeight="180dp"
+                    android:text="Bot siap..." android:textColor="#CBD5E1"
+                    android:textSize="12sp" android:fontFamily="monospace"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="⚠️ Trading berisiko. Selalu mulai dari Paper Trading. Bukan saran keuangan."
+            android:textColor="#94A3B8"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+</ScrollView>
